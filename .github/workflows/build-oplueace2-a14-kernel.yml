@@ -38,7 +38,7 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace
         mkdir clang-aosp
         wget https://github.com/ZyCromerZ/Clang/releases/download/19.0.0git-20240304-release/Clang-19.0.0git-20240304.tar.gz
-        tar -C clang-aosp/ -zxvf clang-r450784e.tar.gz
+        tar -C clang-aosp/ -zxvf Clang-19.0.0git-20240304.tar.gz
 
     - name: Setup KernelSU
       run: |
