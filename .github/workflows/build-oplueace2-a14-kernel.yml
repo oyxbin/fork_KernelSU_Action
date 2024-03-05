@@ -37,7 +37,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         mkdir clang-aosp
-        wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master-kernel-build-2022/clang-r450784e.tar.gz
+        wget https://github.com/ZyCromerZ/Clang/releases/download/19.0.0git-20240304-release/Clang-19.0.0git-20240304.tar.gz
         tar -C clang-aosp/ -zxvf clang-r450784e.tar.gz
 
     - name: Setup KernelSU
