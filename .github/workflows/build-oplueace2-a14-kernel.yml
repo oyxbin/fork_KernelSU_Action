@@ -36,9 +36,9 @@ jobs:
     - name: Download Clang-aosp
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        mkdir clang-aosp
-        wget https://github.com/ZyCromerZ/Clang/releases/download/19.0.0git-20240304-release/Clang-19.0.0git-20240304.tar.gz
-        tar -C clang-aosp/ -zxvf Clang-19.0.0git-20240304.tar.gz
+        mkdir clang
+        wget -O clang.tar.gz https://kali.download/nethunter-images/toolchains/clang-r416183b1.tar.gz
+        tar -C clang/ -zxvf clang.tar.gz
 
     - name: Setup KernelSU
       run: |
@@ -53,7 +53,7 @@ jobs:
         OUT_DIR=../../out
         DEFCONFIG="gki_defconfig vendor/waipio_GKI.config"
         LTO=thin
-        export PATH=$GITHUB_WORKSPACE/kernel_workspace/clang-aosp/bin:$PATH
+        export PATH=$GITHUB_WORKSPACE/kernel_workspace/clang/bin:$PATH
         export CLANG_TRIPLE=aarch64-linux-gnu-
         export ARCH=arm64
         export SUBARCH=arm64
